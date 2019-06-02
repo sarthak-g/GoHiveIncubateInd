@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Panel</title>
+
+
+    <!-- BOOTSTRAP STYLES-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- FONTAWESOME STYLES-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--CUSTOM BASIC STYLES-->
+
+    <style>
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height:25px;
+}
+
+#wrapper {
+    width: 100%;
+    background: rgb(65, 65, 65);
+}
+
+#page-wrapper {
+    padding: 15px 15px;
+    min-height: 600px;
+    background: #F3F3F3;
+}
+
+#page-inner {
+    width: 100%;
+    margin: 10px 20px 10px 0px;
+    background-color: #fff!important;
+    padding: 10px;
+    min-height: 1200px;
+}
+
+.page-head-line {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 800;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #00CA79;
+    margin-bottom: 10px;
+}
+
+.page-subhead-line {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-style:italic;
+    margin-bottom:30px;
+    border-bottom:1px dashed #00CA79;
+
+}
+
+
+/*==============================================
+    MENU STYLES
+    =============================================*/
+
+
+.navbar-cls-top .navbar-brand {
+    color: #fff;
+    background: #202020;
+    width: 260px;
+    text-align: center;
+    height: 75px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 900;
+    padding-top: 25px;
+    text-transform:uppercase;
+}
+
+.header-right {
+    color: #fff;
+    padding: 15px 50px 5px 50px;
+    float: right;
+    font-size: 16px;
+}
+
+.navbar-cls-top .navbar-brand:hover {
+    background: #000000;
+    color: #fff;
+}
+
+.user-img-div {
+    min-height: 140px;
+    padding: 20px;
+    background-color: rgba(184, 47, 43, 0.761);
+}
+
+    .user-img-div img {
+        max-height: 60px;
+    }
+
+    .user-img-div .inner-text {
+        text-align: right;
+        position: relative;
+        color: #fff;
+        font-weight: 800;
+        line-height: 25px;
+    }
+
+.active-menu {
+    background-color: rgba(236, 115, 15, 0.904)!important;
+}
+.active-menu-top {
+    background-color: #000!important;
+}
+
+.arrow {
+    float: right;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+
+.nav-second-level li,
+.nav-third-level li {
+    border-bottom: none !important;
+}
+
+    .nav-second-level li a {
+        padding-left: 37px;
+    }
+
+    .nav-third-level li a {
+        padding-left: 55px;
+    }
+
+.sidebar-collapse, .sidebar-collapse .nav {
+    background: none;
+}
+
+    .sidebar-collapse .nav {
+        padding: 0;
+    }
+
+        .sidebar-collapse .nav > li > a {
+            color: #fff;
+            background: #202020;
+            text-shadow: none;
+            padding: 15px 40px;
+            border-bottom: 1px solid #2F2E31;
+        }
+
+    .sidebar-collapse > .nav > li > a {
+        padding: 15px 10px;
+    }
+
+    .sidebar-collapse .nav > li > a:hover,
+    .sidebar-collapse .nav > li > a:focus {
+        background: rgb(211, 218, 215), 223, 222);
+        outline: 0;
+    }
+
+
+
+.nav-second-level > li:last-child > a:after,
+.nav-third-level > li:last-child > a:after {
+    height: 50%;
+}
+
+.nav-third-level > li > a:after,
+.nav-third-level > li > a:before {
+    left: 40px;
+}
+
+.navbar-side {
+    border: none;
+    background-color: #f5e6e6;
+}
+
+.navbar-cls-top {
+    background: rgb(65, 65, 65);
+    border-bottom: none;
+}
+
+
+.navbar-default {
+    border: 0px solid rgb(211, 218, 215), 223, 222);
+}
+
+.navbar-header {
+    background: rgb(211, 218, 215), 223, 222);
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #00CA79;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+
+    .navbar-default .navbar-toggle .icon-bar {
+        background-color: #FFF;
+    }
+
+.nav > li > a > i {
+    margin-right: 10px;
+}
+/*==============================================
+    FOOTER  STYLES
+    =============================================*/
+#footer-sec {
+    background-color:#000;
+    padding:20px 50px;
+    color:#fff;
+    font-size:12px;
+}
+
+    #footer-sec a {
+        color:#fff;
+    }
+    #footer-sec a:hover,a:focus {
+        color:#fff;
+        text-decoration:none;
+    }
+/*==============================================
+    MEDIA QUERIES
+    =============================================*/
+
+@media (min-width:768px) {
+    #page-wrapper {
+        margin: 0 0 0 260px;
+        padding: 15px 30px;
+        min-height: 1200px;
+    }
+
+
+    .navbar-side {
+        z-index: 1;
+        position: absolute;
+        width: 260px;
+    }
+
+    .navbar {
+        border-radius: 0px;
+    }
+}
+
+    </style>
+
+    <!--CUSTOM MAIN STYLES-->
+    <style>
+.main-box {
+    text-align:center;
+    padding:20px;
+    border-radius:5px;
+    -moz-border-radius:5px ;
+    -webkit-border-radius:5px;
+    margin-bottom:40px;
+}
+    .main-box a,.main-box a:hover {
+        color:#fff;
+        text-decoration:none;
+
+    }
+.mb-dull {
+    background-color: 	rgb(116, 192, 40);
+}
+.mb-red {
+    background-color: rgb(233, 50, 50);
+}
+.mb-pink {
+    background-color:#FF2F71;
+}
+    .main-box h5 {
+        font-size:16px;
+        font-weight:800;
+        text-transform:uppercase;
+    }
+
+    </style>
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Charge used per day"
+                },
+                axisY:{
+                    includeZero: false
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: [
+                        { y: 84 , indexLabel: "highest",markerColor: "DarkSlateGrey", markerType: "cross" },
+                        { y: 61 },
+                        { y: 54 },
+                        { y: 79 },
+                        { y: 40 },
+                        { y: 25, indexLabel: "lowest",markerColor: "red", markerType: "triangle" },
+
+
+                    ]
+                }]
+            });
+            chart.render();
+
+            }
+
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">EESL</a>
+            </div>
+
+
+        </nav>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li>
+                        <div class="user-img-div">
+                            <!-- <img src="assets/img/" alt="UserImage" class="img-thumbnail"/> -->
+
+                            <div class="inner-text">
+                                Customer
+                            <br />
+                                <small>Last Recharge:25/05/19</small>
+                            </div>
+                        </div>
+
+                    </li>
+
+
+                    <li>
+                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard "></i>Dashboard</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">User Dashboard</h1>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+
+                <br>
+                <!-- JS Chart -->
+
+                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+                <!-- End of Chart -->
+
+
+                <br>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="main-box mb-red">
+                            <a href="#">
+                                <i class="fa fa-car fa-5x"></i>
+                                <h3>Queue Length</h3>
+                                <p>3</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="main-box mb-dull">
+                            <a href="#">
+                                <i class="fa fa-plug fa-5x"></i>
+                                <h3>Active Ports</h3>
+                                <p>4</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
+                          alt="First slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(16).jpg"
+                          alt="Second slide">
+                      </div>
+                      <div class="carousel-item">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(17).jpg"
+                          alt="Third slide">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div> -->
+
+                <!-- /. ROW  -->
+
+                <div class="row">
+
+                    <!-- /.REVIEWS &  SLIDESHOW  -->
+                    <!--/.Chat Panel End-->
+                </div>
+                <!-- /. ROW  -->
+
+
+                <div class="row">
+
+                    <div class="col-md-8">
+
+                        <br />
+                        <!-- 16:9 aspect ratio -->
+                        <div>
+                            <iframe src="https://www.google.com/maps/d/embed?mid=11BjNXRlHDBFpWrAbusAQiT6VrlBu8cMi" width="640" height="480"></iframe>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!--/.Row-->
+                <hr />
+                <div class="row">
+
+                    <div class="col-md-8">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Station Name</th>
+                                        <th>Wait Time (mins)</th>
+                                        <th>Cars in Queue</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>*</td>
+                                        <td>Incubate Electric Charge Point
+                                            <!-- <span class="label label-danger">Mark</span> -->
+                                        </td>
+                                        <td> 20 </td>
+                                        <td> 7</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>*</td>
+                                        <td>Allsoft Charging pt.
+                                            <!-- <span class="label label-danger">Mark</span> -->
+                                        </td>
+                                        <td> 8 </td>
+                                        <td> 3</td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+                <!--/.Row-->
+                <hr />
+
+                <!--/.ROW-->
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+    <div id="footer-sec">
+
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/core.js"></script>
+
+    <!-- BOOTSTRAP SCRIPTS -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><!-- METISMENU SCRIPTS -->
+    <!-- <script src="assets/js/jquery.metisMenu.js"></script> -->
+       <!-- CUSTOM SCRIPTS -->
+    <!-- <script src="assets/js/custom.js"></script> -->
+
+        <!-- JS chart -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+
+</body>
+</html>
